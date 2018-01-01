@@ -1,4 +1,4 @@
-<div class="servers buy">
+<div class="servers">
   <br><br>
   <div class="subnav">
     <%= link_to dashboard_index_path do %>
@@ -8,7 +8,7 @@
 
   <div class="container">
     
-    <% if @servers.count == 0 %>
+    <% if @servers.count > 0 %>
       
       <div class="heading">
         <div class="left">
@@ -41,10 +41,13 @@
         <% end %>
       </table>
     <% else %>
-      <div class="center">
-        <h1>You currently don't have any miners.</h1>
+      <div class="panel panel-info" style="margin: 60px auto;">
+        <br>
+        <h2>You currently don't have any miners.</h2>
         <br>
         <%= link_to "Buy Miners", buy_path, class: "btn" %>
+        <div class="clearfix"></div>
+        <br>
       </div>
     <% end %>
   </div>

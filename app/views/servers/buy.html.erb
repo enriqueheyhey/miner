@@ -5,50 +5,69 @@
      / <%= link_to "My Miners", servers_path %> / Buy Miners
   </div>
 
-  <div style="padding: 2%;">
-  
-    <div class="left">
-      <div class="panel">
-        <h1>Buy Miners</h1>
-        <table ng-init="numberMiners = 1">
-          <tr>
-            <td>
-              How Many?
-              <div class="small">$2,500/miner</div>
-            </td>
-            <td>
-              <input type="number" class="form-control" placeholder="" ng-model="numberMiners">
-            </td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td>{{numberMiners * 2500 | currency}}</td>
-          </tr>
-        </table>
-        <table >
-          <tr class="btn" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
-            <td>
-              <a
-                ng-class="{'disabled': numberMiners == 0 || !numberMiners}"
-                href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=234554734543&item_name={{numberMiners}}miners&item_number=234554734543&notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/234554734543&authenticity_token=<%= form_authenticity_token %>&invoice=234554734543&notify_url=http://theminingco.com/hook">
-                  <button ng-disabled="numberMiners == 0 || !numberMiners" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
-                
-                    <%= image_tag("Paypal.svg") %> Pay via Paypal
-                  </button>
-                </a>    
-            </td>
-          </tr>
-        </table>
-      </div>
+  <div style="margin: 60px auto;">
+    <div class="panel">
+      <h1>Buy Miners</h1>
+      <table ng-init="numberMiners = 1">
+        <tr>
+          <td>
+            How Many?
+            <div class="small">$2,500/miner</div>
+          </td>
+          <td>
+            <input type="number" class="form-control" placeholder="" ng-model="numberMiners">
+          </td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td>{{numberMiners * 2500 | currency}}</td>
+        </tr>
+      </table>
+      <table >
+        <tr class="btn" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
+          <td>
+            <a
+              ng-class="{'disabled': numberMiners == 0 || !numberMiners}"
+              href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=234554734543&item_name={{numberMiners}}miners&item_number=234554734543&notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/234554734543&authenticity_token=<%= form_authenticity_token %>&invoice=234554734543&notify_url=http://theminingco.com/hook">
+                <button ng-disabled="numberMiners == 0 || !numberMiners" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
+              
+                  <%= image_tag("Paypal.svg") %> Pay via Paypal
+                </button>
+              </a>    
+          </td>
+        </tr>
+      </table>
     </div>
 
-    <div class="right">
-      <div class="panel">
-        <h1>How it works</h1>
-        <h4><i class="ion-android-checkmark-circle"></i> Purchase Miners</h4>
-        <h4><i class="ion-android-checkmark-circle"></i> 3-5 Day Set up</h4>
-        <h4><i class="ion-android-checkmark-circle"></i> Start Mining Ethereum at 200 MH/s for 2 years</h4>
-      </div>
+    <br>
+    <div class="panel">
+      <h2>Set Up Process</h2>
+      <table>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>Purchase miners via Paypal's secure gateway.</td>
+        </tr>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>Current set up time is 3-5 days from receipt of payment. We'll send you an email when your miner is up and running.</td>
+        </tr>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>Mine Ethereum at 200 MH/s for 2 years.</td>
+        </tr>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>We cover electricity costs and maintenance.</td>
+        </tr>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>Keep track of how your miner is performing on this site.</td>
+        </tr>
+        <tr>
+          <td><i class="ion-record text-muted small"></i></td>
+          <td>Withdraw payouts to your wallet.</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
