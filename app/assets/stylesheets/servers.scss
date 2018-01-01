@@ -1,4 +1,22 @@
 .servers {
+  .panel {
+    margin: 0;
+  }
+
+  .left {
+    .panel {
+      max-width: 400px;
+    }
+    
+  }
+
+  .right {
+    .panel {
+      background-color: transparent;
+      padding-right: 2%;
+      padding-left: 2%;
+    }
+  }
   table {
     .btn {
       display: table-row !important;

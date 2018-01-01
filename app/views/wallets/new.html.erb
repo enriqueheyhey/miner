@@ -1,4 +1,11 @@
-<div class="panel">
-  <h1>New Wallet</h1>
-  <%= render 'form', wallet: @wallet %>
+<div class="wallets">
+  <br><br>
+  <div class="subnav">
+    <%= link_to "Dashboard", dashboard_index_path %>
+     / <%= link_to "My Wallets", wallets_path %> / New Wallet
+  </div>
+  <div class="panel">
+    <h1>New Wallet</h1>
+    <%= render 'form', wallet: @wallet %>
+  </div>
 </div>

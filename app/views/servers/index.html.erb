@@ -5,8 +5,8 @@
       <i class="ion-chevron-left small"></i> Back to Dashboard
     <% end %>
   </div>
+
   <div class="container">
-    <p id="notice"><%= notice %></p>
     
     <% if @servers.count == 0 %>
       
@@ -15,7 +15,7 @@
           <h1>My Miners</h1>
         </div>
         <div class="right text-right">
-          <%= link_to "Buy Miners", new_server_path, class: "btn" %>
+          <%= link_to "Buy Miners", buy_path, class: "btn" %>
         </div>
       </div>
       
