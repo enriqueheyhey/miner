@@ -1,0 +1,69 @@
+<div class="transactions">
+  <br><br>
+  <div class="subnav">
+    <%= link_to dashboard_index_path do %>
+      <i class="ion-chevron-left small"></i> Back to Dashboard
+    <% end %>
+  </div>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    
+
+    <h1>Transactions</h1>
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Transaction #</th>
+      </tr>
+      <tr>
+        <td>12/16/17</td>
+        <td>Payout</td>
+        <td>0.2 ETH</td>
+        <td>8271284c91a</td>
+      </tr>
+      <tr>
+        <td>12/11/17</td>
+        <td>Withdrawal</td>
+        <td>10 ETH</td>
+        <td>1381a2v128d</td>
+      </tr>
+      <tr>
+        <td>12/05/17</td>
+        <td>Purchased Miner</td>
+        <td>$2,500</td>
+        <td>02912a2v27b</td>
+      </tr>
+      
+    </table>
+  </div>
+</div>
+
+
+<!--  
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%# @transactions.each do |transaction| %>
+      <tr>
+        <td><%#= link_to 'Show', transaction %></td>
+        <td><%#= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%#= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Transaction', new_transaction_path %>
+-->

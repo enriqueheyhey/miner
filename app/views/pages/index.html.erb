@@ -1,0 +1,44 @@
+<div class="pages">
+  <div class="firstpanel" style="background-image: url(<%= image_url("firstpanel.jpg") %>);">
+    <h1>Fully Managed Miners</h1>
+    <h2>Invest in servers that mine Ethereum</h2>
+    <%= link_to "Start Mining", new_user_registration_path, class: "btn" %>
+    <table>
+      <tr>
+        <td><i class="ion-checkmark-circled text-success"></i></td>
+        <td>Fully Managed 200 HashRate/Second</td>
+      </tr>
+      <tr>
+        <td><i class="ion-checkmark-circled text-success"></i></td>
+        <td>$2,500 Per Miner <small>(Good for 2 years of mining)</small></td>
+      </tr>
+      <tr>
+        <td><i class="ion-checkmark-circled text-success"></i></td>
+        <td>Maintenance and Electricity Included</td>
+      </tr>
+      <tr>
+        <td><i class="ion-checkmark-circled text-success"></i></td>
+        <td>Mining payouts split 50/50</td>
+      </tr>
+    </table>
+  </div>
+  <div class="second-panel">
+    <h1>How it Works</h1>
+    <div class="one-third">
+      <%= image_tag("miners.png") %>
+      <h3>Invest $2,500/Miner</h3>
+      <p>Diversify your investment portfolio by purchasing a managed miner from us. We'll make sure your investment is put to work!</p>
+    </div>
+    <div class="one-third">
+      <%= image_tag("payout.png") %>
+      <h3>We split the payout</h3>
+      <p>We manage your miner in-house and make sure it runs 24/7 mining every second. In addition, we pay for the electricity. We split the payouts 50/50!</p>
+    </div>
+    <div class="one-third">
+      <%= image_tag("grow.png") %>
+      <h3>Watch your Ether grow</h3>
+      <p>As time goes by your mined Ether has the potential to increase in value.</p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

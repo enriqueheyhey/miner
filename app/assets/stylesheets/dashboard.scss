@@ -1,0 +1,54 @@
+.dashboard {
+
+  table {
+    width: 336px;
+
+    td:first-child,
+    td:last-child {
+      text-transform: uppercase;
+      font-size: 75%;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      /*text-align: right;*/
+      color: #888;
+    }
+
+    td:last-child {
+      width: 5px;
+    }
+  }
+
+  .miners {
+    tr:last-child,
+    tr:last-child td {
+      background-color: #38B8F2;
+      color: #fff !important;
+    }
+  }
+}
+
+.card {
+  border: 2px solid rgba(0,0,0,0.1);
+  width: 340px;
+  border-radius: 8px 8px 0 0;
+  float: left;
+  margin: 10px;
+
+  a {
+    color: inherit;
+  }
+
+  .card-top {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 6px 6px 0 0;
+  }
+
+  h2 {
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,0.3);
+  }
+}

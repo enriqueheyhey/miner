@@ -1,0 +1,51 @@
+<div class="servers buy">
+  <br><br>
+  <div class="subnav">
+    <%= link_to "Dashboard", dashboard_index_path %>
+     / <%= link_to "My Miners", servers_path %> / Buy Miners
+  </div>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+
+    <div class="card">
+      <div
+      class="card-top"
+      style="
+      background-color: orange;
+      border-bottom: 5px solid gold;
+      height: 60px;"
+      >
+      <h1>Buy Miners</h1>
+      </div>
+      <table ng-init="numberMiners = 1">
+        <tr>
+          <td>
+            How Many?
+            <div class="small">$2,500/miner</div>
+          </td>
+          <td>
+            <input type="number" class="form-control" placeholder="" ng-model="numberMiners">
+          </td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td>{{numberMiners * 2500 | currency}}</td>
+        </tr>
+      </table>
+      <table >
+        <tr class="btn" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
+          <td>
+            <a
+              ng-class="{'disabled': numberMiners == 0 || !numberMiners}"
+              href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=234554734543&item_name={{numberMiners}}miners&item_number=234554734543&notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/234554734543&authenticity_token=<%= form_authenticity_token %>&invoice=234554734543&notify_url=http://theminingco.com/hook">
+                <button ng-disabled="numberMiners == 0 || !numberMiners" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
+              
+                  <%= image_tag("Paypal.svg") %> Pay via Paypal
+                </button>
+              </a>    
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

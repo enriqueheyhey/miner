@@ -1,0 +1,154 @@
+<div class="dashboard">
+  <div class="container">
+    <br><br><br>
+    <div class="heading">
+      <h1>Dashboard</h1>
+    </div>
+
+    <div class="card">
+      <div
+      class="card-top"
+      style="background-image: url(<%= image_url("Miners-Top.png") %>);
+      background-color: #FF984A;
+      border-bottom: 5px solid gold;"
+      >
+        <h2>Miners</h2>
+      </div>
+
+      <table class="miners">
+        <tr>
+          <td>
+            <%= link_to servers_path do %>
+              129128dhk3
+            <% end %>
+          </td>
+          <td class="text-right">
+            <%= link_to servers_path do %>
+              <i class="ion-record small text-success"></i> 205 MH/s
+            <% end %>
+          </td>
+          <td>
+            <%= link_to servers_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to servers_path do %>
+              1928dhk3
+            <% end %>
+          </td>
+          <td class="text-right">
+            <%= link_to servers_path do %>
+              <i class="ion-record small text-success"></i> 200 MH/s
+            <% end %>
+          </td>
+          <td>
+            <%= link_to servers_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to servers_path do %>
+              1827eh3612
+            <% end %>
+          <td class="text-right">
+            <%= link_to servers_path do %>
+              <i class="ion-record small text-danger"></i> Pending
+            <% end %>
+          </td>
+          <td>
+            <%= link_to servers_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to buy_path do %>
+              Buy Miner
+            <% end %>  
+          </td>
+          <td class="text-right">
+            <%= link_to buy_path do %>
+              $2,500 or 2 ETH
+            <% end %>
+          </td>
+          <td>
+            <%= link_to buy_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="card">
+      <div
+      class="card-top"
+      style="background-image: url(<%= image_url("Wallet-Top.png") %>);
+      background-color: #1795EA;
+      border-bottom: 5px solid skyblue;"
+      >
+        <h2>My Wallet</h2>
+      </div>
+
+      <table>
+        <tr>
+          <td>
+            <%= link_to wallets_path do %>
+              Withdraw
+            <% end %>
+          </td>
+          <td class="text-right">
+            <%= link_to wallets_path do %>
+              Balance 5.23 ETH
+            <% end %>
+          </td>
+          <td>
+            <%= link_to wallets_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to new_wallet_path do %>
+              Add New
+            <% end %>
+          </td>
+          <td></td>
+          <td>
+            <%= link_to new_wallet_path do %>
+              <i class="ion-chevron-right"></i>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div
+      class="card-top"
+      style="background-image: linear-gradient(-133deg, #004B91 0%, #78CC37 100%); background-color: #36857B;
+      border-bottom: 5px solid lime;"
+      >
+        <h2>Transactions</h2>
+      </div>
+
+      <table>
+        <tr>
+          <td><%= link_to "View All", transactions_path %></td>
+          <td class="text-right">
+            
+          </td>
+          <td><i class="ion-chevron-right"></i></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
