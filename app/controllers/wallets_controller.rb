@@ -5,7 +5,7 @@ class WalletsController < ApplicationController
   # GET /wallets
   # GET /wallets.json
   def index
-    @wallets = Wallet.all
+    @wallets = Wallet.where("user_id = #{current_user.id}")
   end
 
   # GET /wallets/1
@@ -25,11 +25,11 @@ class WalletsController < ApplicationController
   # POST /wallets
   # POST /wallets.json
   def create
-    @wallet = current_user.wallets.build(item_params)
+    @wallet = current_user.wallets.build(wallet_params)
 
     respond_to do |format|
       if @wallet.save
-        format.html { redirect_to @wallet, notice: 'Wallet was successfully created.' }
+        format.html { redirect_to wallets_path, notice: 'Wallet was successfully created.' }
         format.json { render :show, status: :created, location: @wallet }
       else
         format.html { render :new }
@@ -70,6 +70,6 @@ class WalletsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wallet_params
-      params.fetch(:wallet, {})
+      params.require(:wallet).permit(:type, :address, :user_id)
     end
 end

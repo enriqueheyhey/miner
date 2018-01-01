@@ -11,21 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :type %>
-  </div>
+  <!-- <div class="field">
+    <%#= f.label :type %>
+    <%#= f.text_field :type %>
+  </div> -->
 
   <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address %>
   </div>
 
-  <div class="field">
-    <%= f.text_field :user_id %>
-  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+<!--   <div class="field">
+    <%#= f.text_field :user_id %>
+  </div> -->
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Wallet", class: "btn" %>
   </div>
 <% end %>

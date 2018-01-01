@@ -16,7 +16,24 @@
       <div class="clearfix"></div>
     </div>
 
-    <div class="card" style="border-radius: 8px;">
+    <% @wallets.each do |wallet| %>
+      <div class="card">
+        <h2><%= wallet.address %></h2>
+        <br>
+        <div class="left">
+          <%= link_to 'Destroy', wallet, class: "btn btn-secondary", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <div class="right">
+          <a href="" class="btn btn-warning">
+            Withdraw
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    <% end %>
+
+
+    <!-- <div class="card" style="border-radius: 8px;">
       <div
       class="card-top center"
       style="background-color: #fff; border-radius: 8px; padding: 20px;"
@@ -24,7 +41,7 @@
         <h2>458227183817261872</h2>
         <br>
         <div class="left">
-          <a href="" class="btn btn-secondary">
+          <a href="" ng-click="toggleDelete = !toggleDelete" class="btn btn-secondary">
             Delete
           </a>
         </div>
@@ -35,7 +52,7 @@
         </div>
         
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
