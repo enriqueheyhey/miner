@@ -8,10 +8,18 @@
       display: table-row !important;
     }
   }
+
+  .checkmark {
+    .ion-checkmark-circled {
+      font-size: 250%;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .panel-info {
   text-align: center;
+  background-color: transparent;
   .btn {
     font-size: 140%;
     padding: 10px 25px;

@@ -5,7 +5,7 @@
      / <%= link_to "My Miners", servers_path %> / Buy Miners
   </div>
 
-  <div style="margin: 60px auto;">
+  <div style="margin: 60px auto;" ng-if="!$root.toggleConfirmation">
     <div class="panel">
       <h1>Buy Miners</h1>
       <table ng-init="numberMiners = 1">
@@ -28,6 +28,7 @@
           <td>
             <a
               ng-class="{'disabled': numberMiners == 0 || !numberMiners}"
+              ng-click="purchasedMiner()"
               href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=234554734543&item_name={{numberMiners}}miners&item_number=234554734543&notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/234554734543&authenticity_token=<%= form_authenticity_token %>&invoice=234554734543&notify_url=http://theminingco.com/hook">
                 <button ng-disabled="numberMiners == 0 || !numberMiners" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
               
@@ -68,6 +69,17 @@
           <td>Withdraw payouts to your wallet.</td>
         </tr>
       </table>
+    </div>
+  </div>
+
+  <!-- Confirmation -->
+  <div class="container" ng-if="$root.toggleConfirmation">
+    <br>
+    <div class="panel center">
+      <h1 class="checkmark"><i class="ion-checkmark-circled text-success"></i></h1>
+      <h2>Successfully received your request to purchase a miner.</h2>
+      <p>We will email you as soon as the payment via Paypal is approved.</p>
+      
     </div>
   </div>
 </div>

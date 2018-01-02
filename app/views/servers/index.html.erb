@@ -41,14 +41,16 @@
         <% end %>
       </table>
     <% else %>
-      <div class="panel panel-info" style="margin: 60px auto;">
-        <br>
+      <div class="panel panel-info" style="margin: 30px auto;">
+
         <h2>You currently don't have any miners.</h2>
         <br>
         <%= link_to "Buy Miners", buy_path, class: "btn" %>
         <div class="clearfix"></div>
         <br>
       </div>
+
+      <%= render 'pages/pagescontent' %>
     <% end %>
   </div>
 </div>

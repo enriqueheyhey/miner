@@ -25,6 +25,12 @@ var myApp = angular.module('myApp', [
 
 var appControllers = angular.module('appControllers', ['ngAnimate']);
 
-appControllers.controller('MainController', ['$scope', function($scope) {
+appControllers.controller('MainController', ['$rootScope', '$scope', '$timeout', function($rootScope, $scope, $timeout) {
+  
+  $rootScope.purchasedMiner = function() {
+    $timeout(function() {
+      $rootScope.toggleConfirmation = true;
+    }, 5000);
+  };
 
 }]);
