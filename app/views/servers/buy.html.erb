@@ -1,11 +1,16 @@
 <div class="servers">
-  <br><br>
+<!--   <div class="subnav">
+    <%#= link_to "Dashboard", dashboard_index_path %>
+     / <%#= link_to "My Miners", servers_path %> / Buy Miners
+  </div> -->
+
   <div class="subnav">
-    <%= link_to "Dashboard", dashboard_index_path %>
-     / <%= link_to "My Miners", servers_path %> / Buy Miners
+    <%= link_to dashboard_index_path do %>
+      <i class="ion-chevron-left small"></i> Back to Dashboard
+    <% end %>
   </div>
 
-  <div style="margin: 60px auto;" ng-if="!$root.toggleConfirmation">
+  <div style="margin: 30px auto;" ng-if="!$root.toggleConfirmation">
     <div class="panel">
       <h1>Buy Miners</h1>
       <table ng-init="numberMiners = 1">
@@ -40,7 +45,6 @@
       </table>
     </div>
 
-    <br>
     <div class="panel">
       <h2>Set Up Process</h2>
       <table>
@@ -66,7 +70,7 @@
         </tr>
         <tr>
           <td><i class="ion-record text-muted small"></i></td>
-          <td>Withdraw payouts to your wallet.</td>
+          <td>Payouts automatically sent to your wallet.</td>
         </tr>
       </table>
     </div>

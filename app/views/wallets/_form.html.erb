@@ -27,7 +27,18 @@
     <%#= f.text_field :user_id %>
   </div> -->
 
+
   <div class="actions">
-    <%= f.submit "Create Wallet", class: "btn" %>
+    <% if current_page?(new_wallet_path) %>
+      <%= f.submit "Save Wallet", class: "btn" %>
+    <% else %>
+    <div class="left">
+        <%= link_to "Delete", wallet, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      <div class="right">
+        <%= f.submit "Save Wallet", class: "btn" %>
+      </div>
+      <div class="clearfix"></div>
+    <% end %>
   </div>
 <% end %>

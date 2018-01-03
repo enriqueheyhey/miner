@@ -1,11 +1,6 @@
 .navbar {
-  overflow: hidden;
   background-color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
   min-height: 70px;
-  z-index: 99;
   border-bottom: 1px solid rgba(0,0,0,.1);
 
   a {
@@ -81,6 +76,15 @@
         }
       }
     }
+  }
+}
+
+.subnav {
+  background-color: rgba(0,0,0,.1);
+  padding: 15px;
+
+  a {
+    font-weight: 800;
   }
 }
 
