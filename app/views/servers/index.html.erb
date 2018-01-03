@@ -1,5 +1,5 @@
+<% if current_user.id == 1 || current_user.id == 2 %>
 <div class="servers">
-  <br><br>
   <div class="subnav">
     <%= link_to dashboard_index_path do %>
       <i class="ion-chevron-left small"></i> Back to Dashboard
@@ -15,7 +15,7 @@
           <h1>My Miners</h1>
         </div>
         <div class="right text-right">
-          <%= link_to "Buy Miners", buy_path, class: "btn" %>
+          <%= link_to "Add Miner", new_server_path, class: "btn" %>
         </div>
       </div>
       
@@ -24,7 +24,7 @@
         <tr>
           <th>Name</th>
           <th>Miner ID</th>
-          <th>Mining</th>
+          <th>User ID</th>
           <th>Hashrate</th>
           <th>Total Payout</th>
           <th>Transaction #</th>
@@ -32,8 +32,8 @@
         <% @servers.each do |server| %>
           <tr>
             <td><%= server.name %></td>
-            <td><%= server.miner_id %></td>
-            <td><%= server.mining %></td>
+            <td><%= server.serverid %></td>
+            <td><%= server.user_id %></td>
             <td>100 MH/s</td>
             <td>4.5 ETH</td>
             <td><%= link_to "View", server %></td>
@@ -54,6 +54,7 @@
     <% end %>
   </div>
 </div>
+<% end %>
 
 <!--  
 <h1>Servers</h1>

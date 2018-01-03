@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
 
   def index
     @wallets = Wallet.where("user_id = #{current_user.id}")
+    @servers = Server.where("user_id = #{current_user.id}")
   end
 end

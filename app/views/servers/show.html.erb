@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="panel">
 <p>
   <strong>Name:</strong>
   <%= @server.name %>
@@ -12,13 +12,11 @@
 
 <p>
   <strong>Miner:</strong>
-  <%= @server.miner_id %>
+  <%= @server.serverid %>
 </p>
 
 <p>
   <strong>Owner:</strong>
-  <%= @server.owner %>
+  <%= @server.user_id %>
 </p>
-
-<%= link_to 'Edit', edit_server_path(@server) %> |
-<%= link_to 'Back', servers_path %>
+</div>

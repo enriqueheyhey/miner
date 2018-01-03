@@ -3,49 +3,26 @@
     <!-- <div class="heading">
       <h1>Dashboard</h1>
     </div> -->
-    <div style="width: 336px; float: left; height: 100vh; background-color: #fff;">
+    <div class="left-panel">
 
         <div class="table-label">
           My Miners
         </div>
-        <table>
-          <tr>
-            <td>
-              <%= link_to servers_path do %>
-                129128dhk3
-              <% end %>
-            </td>
-            <td class="text-right">
-              <%= link_to servers_path do %>
-                <i class="ion-record small text-success"></i> Active
-              <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= link_to servers_path do %>
-                1928dhk3
-              <% end %>
-            </td>
-            <td class="text-right">
-              <%= link_to servers_path do %>
-                <i class="ion-record small text-success"></i> Active
-              <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= link_to servers_path do %>
-                1827eh3612
-              <% end %>
-            <td class="text-right">
-              <%= link_to servers_path do %>
-                <i class="ion-record small text-danger"></i> Pending
-              <% end %>
-            </td>
-          </tr>
-        </table>
 
+        <% if @servers.count > 0 %>
+          <% @servers.each do |server| %>
+            <table>
+              <tr>
+                <td>
+                  <%= server.serverid %>
+                </td>
+                <td class="text-right">
+                  <i class="ion-record small text-success"></i> Active
+                </td>
+              </tr>
+            </table>
+          <% end%>
+        <% end %>
         <table class="miners">
           <tr>
             <td>
@@ -80,7 +57,9 @@
                   <% end %>
                 <% end %>
               <% else %>
-                <%= link_to "Add Your Wallet", new_wallet_path, class: "text-warning" %>
+                <%= link_to new_wallet_path, class: "" do %>
+                  <i class="ion-android-warning text-danger"></i> Add Your Wallet
+                <% end %>
               <% end %>
             </td>
             <td></td>
@@ -102,7 +81,8 @@
           </tr>
         </table>
     </div>
-    <div style="width: calc(100% - 336px); float: right; padding: 1% 1% 1% 3%;">
+
+    <div class="right-panel">
       <div class="center">
         <h5>YOU'VE MADE</h5>
         <div ng-repeat="item in coinValues">

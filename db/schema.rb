@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171231192932) do
+ActiveRecord::Schema.define(version: 20180103013553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171231192932) do
     t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "serverstatus", default: 0
+    t.text     "serverid"
     t.index ["user_id"], name: "index_servers_on_user_id", using: :btree
   end
 

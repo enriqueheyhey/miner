@@ -1,5 +1,19 @@
 .dashboard {
 
+  .left-panel {
+    width: 337px;
+    float: left;
+    height: 100vh;
+    background-color: #fff;
+    border-right: 2px solid #ddd;
+  }
+
+  .right-panel {
+    width: calc(100% - 337px);
+    float: right;
+    padding: 2%;
+  }
+
   h1 {
     margin-bottom: 0;
   }
@@ -8,9 +22,6 @@
     width: 336px;
     border-bottom: 1px solid #dedede;
 
-    td:first-child {
-      color: #888;
-    }
 
     td:last-child {
       text-align: right;
