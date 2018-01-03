@@ -1,3 +1,10 @@
+<% if @wallets.count == 0 %>
+  <div class="alert">
+    <i class="ion-alert-circled"></i> Add your
+    <%= link_to "Wallet Address", new_wallet_path %>
+    to automatically receive payouts.
+  </div>
+<% end %>
 <div class="dashboard">
   <div>
     <!-- <div class="heading">

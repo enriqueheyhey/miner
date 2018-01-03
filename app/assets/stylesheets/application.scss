@@ -253,6 +253,17 @@ table {
 
 }
 
+.alert {
+  background-color: #ffc107;
+  padding: 10px 15px;
+  width: 100%;
+  color: rgba(0,0,0,.75);
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 @media screen and (max-width: 767px) {
   body {
     font-size: 15px;
