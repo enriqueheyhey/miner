@@ -2,10 +2,14 @@
 <html ng-app="myApp">
   <head>
     <title>Miner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.min.js"></script>
     <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
