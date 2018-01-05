@@ -1,4 +1,4 @@
-<div class="pages">
+<div class="pages" ng-controller="MainController">
   <div class="firstpanel" style="background-image: url(<%= image_url("firstpanel.jpg") %>);">
     <h1>Fully Managed Miners</h1>
     <h2>Invest in servers that mine Alt Coins</h2>
@@ -24,6 +24,7 @@
       </tr>
     </table>
   </div>
+  
   <div class="second-panel">
     <h1>How it Works</h1>
     <div class="one-third">
@@ -42,5 +43,26 @@
       <p>As time goes by your mined Ether has the potential to increase in value.</p>
     </div>
     <div class="clearfix"></div>
+  </div>
+
+  <div class="second-panel">
+    
+    <div ng-repeat="item in coinValues">
+      <h1 class="text-success" ng-if="item.name == 'Ethereum'">
+        {{7.3 * item.price_usd | currency:"$USD ":0}}
+      </h1>
+    </div>
+    <h3>Potential Earnings on Investment per Year</h3>
+
+    <h2>
+      (((365 / 5) * 0.2) * 0.5) *
+      <span ng-repeat="item in coinValues">
+        <span ng-if="item.name == 'Ethereum'">
+          {{item.price_usd | currency:"$USD ":0}}
+        </span>
+      </span>
+    </h2>
+
+    ((Number of days in a Year / Ave Miner Payout Time) * Ave Ether Payout) * 50 Percent Split with TheMinerCo.com * Current Ether Price = Earnings
   </div>
 </div>
