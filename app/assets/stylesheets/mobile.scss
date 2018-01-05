@@ -1,0 +1,42 @@
+@media screen and (max-width: 800px) {
+
+  .hide-mobile {
+    display: none;
+  }
+  
+  .pages {
+    .btn {
+      width: 300px !important;
+    }
+
+    .firstpanel {
+      padding: 60px 20px !important;
+    }
+  }
+  
+  .dashboard .left-panel,
+  .dashboard .right-panel,
+  .dashboard .table-label,
+  .dashboard table {
+    width: 100%;
+  }
+
+  .dashboard .left-panel {
+    height: inherit;
+  }
+
+  .transactions {
+    .transaction-number {
+      display: none;
+    }
+
+    h1 {
+      padding: 10px 10px 0;
+    }
+
+    .transaction-number-mobile {
+      display: inherit;
+    }
+  }
+
+}

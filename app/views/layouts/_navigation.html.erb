@@ -11,7 +11,10 @@
 
         <a href="" ng-click="toggleDropdown = !toggleDropdown">
           <!-- <img src="http://www.johnson.cornell.edu/people/faculty/oh33/oh33_profile.jpg"> -->
-          <span class="email"><%= current_user.email %></span> <i class="ion-arrow-down-b small"></i>
+          <span class="email"><%= current_user.email %></span> <i class="ion-arrow-down-b small email"></i>
+          
+          <i class="ion-navicon"></i>
+          
         </a>
       <% else %>
         <%= link_to new_user_session_path, class: "#{ 'active' if current_page?(new_user_session_path) }" do %>

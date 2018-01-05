@@ -10,14 +10,14 @@
     <% end %>
   </div>
 
-  <div style="margin: 30px auto;" ng-if="!$root.toggleConfirmation">
+  <div ng-if="!$root.toggleConfirmation">
     <div class="panel">
       <h1>Buy Miners</h1>
       <table ng-init="numberMiners = 1">
         <tr>
           <td>
             How Many?
-            <div class="small">$2,500/miner</div>
+            <div class="small">$2,800/miner</div>
           </td>
           <td>
             <input type="number" class="form-control" placeholder="" ng-model="numberMiners">
@@ -25,7 +25,7 @@
         </tr>
         <tr>
           <td>Total</td>
-          <td>{{numberMiners * 2500 | currency}}</td>
+          <td>{{numberMiners * 2800 | currency}}</td>
         </tr>
       </table>
       <table >
@@ -34,7 +34,7 @@
             <a
               ng-class="{'disabled': numberMiners == 0 || !numberMiners}"
               ng-click="purchasedMiner()"
-              href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=234554734543&item_name={{numberMiners}}miners&item_number=234554734543&notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/234554734543&authenticity_token=<%= form_authenticity_token %>&invoice=234554734543&notify_url=http://theminingco.com/hook">
+              href="https://www.paypal.com/cgi-bin/webscr?amount={{numberMiners * 2500}}&business=orders@theminingco.com&cmd=_xclick&invoice=id<%= current_user.id %>minercount{{numberMiners}}date<%= Time.now.to_datetime.to_i() %>item_name={{numberMiners}}miners&item_number=id<%= current_user.id %>minercount{{numberMiners}}date<%= Time.now.to_datetime.to_i() %>notify_url=http://theminingco.com%2Fhook&no_shipping=1&address_override=0&return=http://theminingco.com/paymentsuccess/id<%= current_user.id %>minercount{{numberMiners}}date<%= Time.now.to_datetime.to_i() %>authenticity_token=<%= form_authenticity_token %>&invoice=id<%= current_user.id %>minercount{{numberMiners}}notify_url=http://theminingco.com/hook">
                 <button ng-disabled="numberMiners == 0 || !numberMiners" ng-class="{'disabled': numberMiners == 0 || !numberMiners}">
               
                   <%= image_tag("Paypal.svg") %> Pay via Paypal

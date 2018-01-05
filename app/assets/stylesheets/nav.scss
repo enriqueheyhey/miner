@@ -9,6 +9,10 @@
     font-size: 120%;
   }
 
+  .ion-navicon {
+    display: none;
+  }
+
   .navbar-brand {
     font-size: 150%;
   }
@@ -99,13 +103,36 @@
   a {
     padding: 0 10px;
   }
+
+  i {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .email {
     display: none;
   }
+
+  .panel {
+    margin: 0 !important;
+  }
+
+  .navbar .ion-navicon {
+    display: inherit;
+    font-size: 2em;
+    line-height: 0;
+  }
+
   .footer {
+    padding: 15px 20px 20px;
+
+    i {
+      font-size: 3em;
+      line-height: 0;
+      padding: 10px 20px;
+    }
+
     .left {
       display: none;
     }
