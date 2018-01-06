@@ -1,17 +1,27 @@
 .dashboard {
+  background-color: #eee !important;
 
   .left-panel {
-    width: 337px;
+    width: 336px;
     float: left;
-    height: 100vh;
     background-color: #fff;
-    border-right: 2px solid #ddd;
   }
 
   .right-panel {
-    width: calc(100% - 337px);
+    width: calc(100% - 336px);
     float: right;
     padding: 2%;
+    background-color: #F4F7FA;
+
+    img {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      font-size: 150%;
+    }
   }
 
   h1 {
@@ -45,6 +55,10 @@
       background-color: #38B8F2;
       color: #fff !important;
     }
+  }
+
+  .pages {
+    border: 1px solid #eee;
   }
 }
 

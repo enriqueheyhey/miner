@@ -90,29 +90,46 @@
     </div>
 
     <div class="right-panel">
-      <div class="center">
-        <h5>YOU'VE MADE</h5>
-        <div ng-repeat="item in coinValues">
-          <div ng-if="item.name == 'Ethereum'">
-            <h2>
-              {{5.23 * item.price_usd | currency:"$USD ":0}} <small class="text-warning">5.23 ETH</small>
-            </h2>
+      <% if @transactions.count == 0 %>
+        <div class="center">
+          <div class="panel">
+            <br>
+            <h1>You've yet to earn some Ether!</h1>
+            <br>
+            <%= link_to "Purchase a Miner", buy_path, class: "btn" %>
+            <br>
+            <br>
           </div>
-        </div>  
-      </div>
+          <br>
+          <br>
+          <div class="pages">
+            <%= render 'pages/secondpanel' %>
+          </div>
+      <% else %>
+          <h5>YOU'VE MADE</h5>
+          <div ng-repeat="item in coinValues">
+            <div ng-if="item.name == 'Ethereum'">
+              <h2>
+                {{5.23 * item.price_usd | currency:"$USD ":0}} <small class="text-warning">5.23 ETH</small>
+              </h2>
+            </div>
+          </div>
+        </div>
       
 
-      <div ng-controller="LineCtrl">
-        <canvas
-        id="line"
-        class="chart chart-line"
-        chart-data="data"
-        chart-labels="labels"
-        chart-series="series"
-        chart-options="options"
-        chart-dataset-override="datasetOverride"
-        chart-click="onClick"></canvas>
-      </div>
+        <div ng-controller="LineCtrl">
+          <canvas
+          id="line"
+          class="chart chart-line"
+          chart-data="data"
+          chart-labels="labels"
+          chart-series="series"
+          chart-options="options"
+          chart-dataset-override="datasetOverride"
+          chart-click="onClick"></canvas>
+        </div>
+      <% end %>
     </div>
   </div>
+  <div class="clearfix"></div>
 </div>
