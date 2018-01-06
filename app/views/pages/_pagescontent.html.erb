@@ -46,26 +46,54 @@
   </div>
 
   <div class="second-panel">
-    
+    <h3>Potential Earnings/Year on $2,800 Miner</h3>
     <div ng-repeat="item in coinValues">
       <h1 class="text-success" ng-if="item.name == 'Ethereum'">
         {{7.3 * item.price_usd | currency:"$USD ":0}}
       </h1>
     </div>
-    <h3>Potential Earnings on Investment per Year</h3>
 
-    <h2>
-      (((365 / 5) * 0.2) * 0.5) *
-      <span ng-repeat="item in coinValues">
-        <span ng-if="item.name == 'Ethereum'">
-          {{item.price_usd | currency:"$USD ":0}}
+    <table class="calc-table">
+      <tr>
+        <td>
+          14.6 Ether
+        </td>
+        <td>x</td>
+        <td>
+          <span ng-repeat="item in coinValues">
+            <span ng-if="item.name == 'Ethereum'">
+              {{item.price_usd | currency:"$USD ":0}}
+            </span>
+          </span>
+        </td>
+        <td>x</td>
+        <td>50%</td>
+      </tr>
+      <tr>
+        <td>Ave Total Mined/Year</td>
+        <td></td>
+        <td>Current Ether Price</td>
+        <td></td>
+        <td>Split Payouts 50/50</td>
+      </tr>
+    </table>
+
+    <div ng-show="toggleExplanation">
+      <h2>
+        (((365 / 5) * 0.2) * 0.5) *
+        <span ng-repeat="item in coinValues">
+          <span ng-if="item.name == 'Ethereum'">
+            {{item.price_usd | currency:"$USD ":0}}
+          </span>
         </span>
-      </span>
-    </h2>
+      </h2>
 
-    <h4>((Number of days in a Year / Ave Miner Payout Time) * Ave Ether Payout) * 50 Percent Split with TheMinerCo.com * Current Ether Price = Earnings</h4>
+      <h4>((Number of days in a Year / Ave Miner Payout Time) * Ave Ether Payout) * 50 Percent Split with TheMinerCo.com * Current Ether Price = Earnings</h4>
+    </div>
+
     <br>
-    <p style="width: 100%; max-width: 800px; margin: auto;"><i class="ion-information-circled small"></i> Calculation assumes the price of Ether stays steady at it's current price. It may shoot up or fall depending on various factors. Please make sure you understand the risk/reward potential.</p>
+    <p style="width: 100%; max-width: 800px; margin: auto;"><i class="ion-information-circled small"></i> Calculation assumes the price of Ether stays steady at it's current price. It may shoot up or fall depending on various factors. Please make sure you understand the risk/reward potential. View detailed <a href="" ng-click="toggleExplanation = !toggleExplanation">calculation</a>.
+    </p>
     <br>
     <br>
     <br> 
