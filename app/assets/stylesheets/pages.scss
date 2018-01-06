@@ -124,4 +124,12 @@ label {
   .pages .second-panel .one-third {
     width: 100%;
   }
+
+  .pages {
+    .calc-table {
+      tr:first-child {
+        font-size: 140%;
+      }
+    }
+  }
 }

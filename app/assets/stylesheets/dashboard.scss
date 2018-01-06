@@ -59,6 +59,17 @@
 
   .pages {
     border: 1px solid #eee;
+    margin-top: 70px;
+
+    h1 {
+      font-size: 250%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .pages {
+      margin-top: 10px;
+    }
   }
 }
 
