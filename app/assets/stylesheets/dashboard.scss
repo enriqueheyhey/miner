@@ -69,6 +69,10 @@
   @media screen and (max-width: 900px) {
     .pages {
       margin-top: 10px;
+
+      table td {
+        font-size: 80%;
+      }
     }
   }
 }
