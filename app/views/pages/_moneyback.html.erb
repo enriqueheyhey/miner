@@ -1,0 +1,12 @@
+<span class="moneyback">
+  <a href="" ng-click="toggle60Day = !toggle60Day">
+    <span class="sixtyday-text">60 Day </span>Money Back Guarantee
+  </a>
+
+  <div ng-if="toggle60Day" class="toggled60">
+    <img class="sixtydayfooter" src="<%= image_url("60day-guarantee.png") %>">
+    If for any reason you are not satisfied with your miner,
+    <a href="mailto:orders@theminerco.com">contact us</a>
+    within 60 days of purchasing your miner and we will issue a full refund. To complete the refund process, you will need to send us back the amount of mined coins from the miner purchased. 
+  </div>
+</span>

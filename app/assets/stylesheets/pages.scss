@@ -60,10 +60,33 @@ label {
     text-align: center;
     background-color: #333;
 
+    a {
+      color: #38B8F2;
+
+      &:hover,
+      &:focus {
+        color: #38B8F2 !important;
+        opacity: 0.9;
+      }
+    }
+
+    .sixtyday {
+      width: 60px;
+      height: auto;
+    }
+
+    .sixtydayfooter {
+      display: none;
+    }
+
     .btn {
       font-size: 200%;
       margin: 20px auto 40px;
       width: 360px;
+
+      &:hover {
+        color: #fff;
+      }
     }
 
     table {
@@ -74,7 +97,8 @@ label {
       font-size: 150%;
 
       td:first-child {
-        width: 30px;
+        width: 50px;
+        text-align: center;
       }
     }
   }

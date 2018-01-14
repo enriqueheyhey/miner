@@ -9,17 +9,5 @@
     <%= render 'form', wallet: @wallet %>
   </div>
 
-  <div class="panel">
-    <h2>Why Add My Wallet?</h2>
-    <table>
-      <tr>
-        <td><i class="ion-record text-muted small"></i></td>
-        <td>Ether is transferred directly to your wallet as soon as the pool pays.</td>
-      </tr>
-      <tr>
-        <td><i class="ion-record text-muted small"></i></td>
-        <td>If you don't currently have a wallet, get one here: <a href="https://www.blockchain.com/">Blockchain Wallet.</a></td>
-      </tr>
-    </table>
-  </div>
+  <%= render 'wallet-info' %>
 </div>

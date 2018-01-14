@@ -1,5 +1,13 @@
-<div class="panel">
-  <h1>Edit Wallet</h1>
-  <%= render 'form', wallet: @wallet %>
-</div>
+<div class="wallets">
+  <div class="subnav">
+    <%= link_to dashboard_index_path do %>
+      <i class="ion-chevron-left small"></i> Back to Dashboard
+    <% end %>
+  </div>
+  <div class="panel">
+    <h1>Edit Your Wallet</h1>
+    <%= render 'form', wallet: @wallet %>
+  </div>
 
+  <%= render 'wallet-info' %>
+</div>
