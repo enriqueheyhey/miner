@@ -23,6 +23,11 @@
   <div ng-repeat="item in coinValues">
     <h1 class="text-success" ng-if="item.name == 'Ethereum'">
       {{7.3 * item.price_usd | currency:"$USD ":0}}
+      <div class="text-muted" style="font-size: 20px; margin-top: -10px;">
+        <small>
+          ({{14.6 * item.price_usd | currency:"$USD ":0}} in 2 years)
+        </small>
+      </div>
     </h1>
   </div>
 
@@ -65,7 +70,9 @@
   </div>
 
   <br>
-  <p style="width: 100%; max-width: 800px; margin: auto;"><i class="ion-information-circled small"></i> Calculation assumes the price of Ether stays steady at it's current price. It may shoot up or fall depending on various factors. Please make sure you understand the risk/reward potential. View detailed <a href="" ng-click="toggleExplanation = !toggleExplanation">calculation</a>.
+  <p style="width: 100%; max-width: 800px; margin: auto;"><i class="ion-information-circled small"></i> Calculation assumes the price of Ether stays steady at it's current price. The value may rise or fall depending on various factors. Please make sure you understand the risk/reward potential. View detailed <a href="" ng-click="toggleExplanation = !toggleExplanation">calculation</a>.
+  <br><br>
+  Please note that in the event that mining Ether becomes unfavorable, we will notify you with choices of what Alt Coins your miner will mine.
   </p>
   <br>
   <br>
