@@ -258,10 +258,17 @@ table {
   padding: 10px 15px;
   width: 100%;
   color: rgba(0,0,0,.75);
+  text-align: center;
 
   a {
     text-decoration: underline;
   }
+}
+
+.alert-danger {
+  background-color: #dc3545!important;
+  color: rgba(255,255,255,1);
+  text-shadow: 1px solid rgba(0,0,0,.75);
 }
 
 @media screen and (max-width: 767px) {
