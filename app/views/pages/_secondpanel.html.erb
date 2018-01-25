@@ -22,10 +22,10 @@
   <h3>Potential Earnings/Year on $2,800 Miner</h3>
   <div ng-repeat="item in coinValues">
     <h1 class="text-success" ng-if="item.name == 'Ethereum'">
-      {{7.3 * item.price_usd | currency:"$USD ":0}}
+      {{3.65 * item.price_usd | currency:"$USD ":0}}
       <div class="text-muted" style="font-size: 20px; margin-top: -10px;">
         <small>
-          ({{14.6 * item.price_usd | currency:"$USD ":0}} in 2 years)
+          ({{7.6 * item.price_usd | currency:"$USD ":0}} in 2 years)
         </small>
       </div>
     </h1>
@@ -34,7 +34,7 @@
   <table class="calc-table">
     <tr>
       <td>
-        14.6 Ether
+        7.3 Ether
       </td>
       <td>x</td>
       <td>
@@ -58,7 +58,7 @@
 
   <div ng-show="toggleExplanation">
     <h2>
-      (((365 / 5) * 0.2) * 0.5) *
+      (((365 / 5) * 0.1) * 0.5) *
       <span ng-repeat="item in coinValues">
         <span ng-if="item.name == 'Ethereum'">
           {{item.price_usd | currency:"$USD ":0}}
