@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1814px" height="445px" viewBox="0 0 1814 445" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Simply</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.0408220441,169.130397 C0.0149002231,162.688533 6.089403,154.458703 18.5991226,145.4877 L214.502894,5.00066255 C223.626709,-1.54223167 238.440294,-1.54290641 247.576628,5.00871726 L442.860807,145.046105 C455.644397,154.213158 461.707008,162.613883 461.409158,169.130397 L461.600703,169.130397 L461.600703,190.392505 L4.54747351e-13,190.392505 L4.54747351e-13,169.130397 L0.0408220441,169.130397 L0.0408220441,169.130397 Z" id="path-1"></path>
+        <filter x="-0.3%" y="-0.8%" width="100.6%" height="101.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.282269022 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M4.54747351e-13,180.72791 L4.54747351e-13,404.180911 C4.54747351e-13,424.886641 16.7944577,441.671952 37.509684,441.671952 L405.473155,441.671952 L4.54747351e-13,180.72791 Z" id="path-3"></path>
+        <filter x="-0.7%" y="-3.1%" width="103.0%" height="104.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="3" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.181283504   0 0 0 0 0.347530335   0 0 0 0 0.727242827  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M24.192909,180.72791 L24.192909,404.180911 C24.192909,424.886641 40.9884334,441.671952 61.6988044,441.671952 L461.600703,441.671952 L24.192909,180.72791 Z" id="path-5"></path>
+        <filter x="-0.7%" y="-3.4%" width="102.7%" height="104.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="3" dy="-3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.181283504   0 0 0 0 0.347530335   0 0 0 0 0.727242827  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-0.3%" y="-2.9%" width="102.1%" height="103.4%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.129840353 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Simply">
+            <g id="Envelope" transform="translate(0.199648, 0.164024)">
+                <g id="top-flap">
+                    <use fill="#FDB826" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <path d="M4.54747351e-13,180.72791 L461.600703,180.72791 L461.600703,306.572977 L461.600703,394.835634 C461.600703,405.432327 450.771396,414.022252 437.412768,414.022252 L24.1879352,414.022252 C10.8286333,414.022252 4.54747351e-13,405.432111 4.54747351e-13,394.835634 L4.54747351e-13,306.572977 L4.54747351e-13,180.72791 Z" id="back" fill="#FDB826"></path>
+                <g id="mid">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#963D97" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <g id="front" transform="translate(242.896806, 311.199931) scale(-1, 1) translate(-242.896806, -311.199931) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#029DDC" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-5"></use>
+                </g>
+                <text id="SIMPLY" font-family="Futura-Bold, Futura" font-size="335" font-weight="bold" letter-spacing="1.84249842" fill="#029DDC">
+                    <tspan x="497" y="436">SIMPLY</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

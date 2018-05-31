@@ -52,15 +52,19 @@ label {
 
   .firstpanel {
     background-size: cover;
-    min-height: 600px;
-    width: 100%;
-    padding: 160px 20px;;
-    color: #fff;
-    text-shadow: 1px 1px rgba(0,0,0,.2);
+    width: 100%; 
     text-align: center;
-    background-color: #333;
+    background-color: rgba(253,184,38,1);
 
-    a {
+    .gradient-overlay {
+      padding: 160px 20px;
+      min-height: 600px;
+      background-color: rgba(253,184,38,.9);
+      color: #4A360C;
+      /*background-color: rgba(230,232,227,.95);*/
+    }
+
+    /*a {
       color: #38B8F2;
 
       &:hover,
@@ -68,7 +72,7 @@ label {
         color: #38B8F2 !important;
         opacity: 0.9;
       }
-    }
+    }*/
 
     .sixtyday {
       width: 60px;
@@ -85,7 +89,8 @@ label {
       width: 360px;
 
       &:hover {
-        color: #fff;
+        color: #fff !important;
+        filter: brightness(110%);
       }
     }
 
@@ -128,6 +133,7 @@ label {
         width: 100%;
         max-width: 200px;
         margin: 10px auto;
+        border-radius: 1em;
       }
     }
   }

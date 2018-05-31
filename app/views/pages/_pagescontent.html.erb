@@ -1,34 +1,18 @@
 <div class="pages" ng-controller="MainController">
-  <div class="firstpanel" style="background-image: url(<%= image_url("firstpanel.jpg") %>);">
-    <h1>Managed Crypto Miners</h1>
-    <h2>Invest in servers that mine Alt Coins</h2>
-    <% if controller_name == 'pages' %>
-      <%= link_to "Start Mining", new_user_registration_path, class: "btn" %>
-    <% end %>
-    <table>
-      <tr>
-        <td><i class="ion-checkmark-circled text-success"></i></td>
-        <td>Fully Managed Miners currently mining <a href="https://coinmarketcap.com/currencies/ethereum/" target="_blank">Ether</a></td>
-      </tr>
-      <tr>
-        <td><i class="ion-checkmark-circled text-success"></i></td>
-        <td>
-          $2,800 Per Miner (Good for 2 years of mining) or <a href="mailto:orders@theminerco.com">contact us</a> for custom orders.
-        </td>
-      </tr>
-      <tr>
-        <td><i class="ion-checkmark-circled text-success"></i></td>
-        <td>Maintenance and Electricity Included</td>
-      </tr>
-      <tr>
-        <td><i class="ion-checkmark-circled text-success"></i></td>
-        <td>We are partners and split payouts 50/50</td>
-      </tr>
-      <tr>
-        <td><img class="sixtyday" src="<%= image_url("60day-guarantee.png") %>"></td>
-        <td><%= render 'moneyback' %></td>
-      </tr>
-    </table>
+  <div class="firstpanel" style="background-image: url(<%= image_url("Jumbo-City.jpg") %>); background-position: bottom center;">
+    <div class="gradient-overlay">
+      <h1>Just an address. No Frills.</h1>
+      <h2>Establish a physical presence, virtually, for multiple locations, all at once.</h2>
+      <% if controller_name == 'pages' %>
+        <%= link_to "Rent an address", new_user_registration_path, class: "btn" %>
+      <% end %>
+      <!-- <div class="container">
+        <img class="sixtyday" src="<%#= image_url("60day-guarantee.png") %>">
+        <div>
+          <%#= render 'moneyback' %>
+        </div>
+      </div> -->
+    </div>
   </div>
   
   <%= render 'secondpanel' %>
