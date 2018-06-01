@@ -1,0 +1,58 @@
+<div ng-init="angularAddresses = <%= @addresses.to_json %>; getCart();"></div>
+<div id="addressContent">
+  <table>
+    <tr>
+      <% if controller_name == 'pages' %>
+        <th class="center">
+          
+        </th>
+      <% end %>
+      <% if controller_name != 'pages' %>
+        <th>Display City</th>
+        <th>Display State</th>
+      <% end %>
+      <th>State</th>
+      <th>City</th>
+      <th>Street</th>
+      <% if controller_name != 'pages' %>
+        <th>Status</th>
+      <% end %>
+    </tr>
+    <tr ng-repeat="address in angularAddresses | filter: searchQuery">
+      <% if controller_name == 'pages' %>
+        <td class="center">
+          <i class="link ion-android-checkbox text-success"
+          ng-if="itemInCart(address.id)"
+          ng-click="removeItem(address.id)"></i>
+          <i class="link ion-android-checkbox-outline-blank text-muted"
+          ng-if="!itemInCart(address.id)"
+          ng-click="addItem(address.id)"></i>
+        </td>
+      <% end %>
+      <% if controller_name != 'pages' %>
+        <td>
+          <a href="/addresses/{{address.id}}/edit">{{address.display_city}}</a>
+        </td>
+      <% end %>
+        <td>
+          <a href="/addresses/{{address.id}}/edit">{{address.display_state}}</a>
+        </td>
+      <td>
+        <a href="/addresses/{{address.id}}/edit">{{address.city}}</a>
+      </td>
+      
+      <td>
+        <a href="/addresses/{{address.id}}/edit">{{address.street}}<span ng-if="address.street_2">, {{address.street_2}}</span></a>
+      </td>
+      
+      <% if controller_name != 'pages' %>
+        <td>
+          <a href="/addresses/{{address.id}}/edit">
+            <span ng-if="address.status == 0">Draft</span>
+            <span ng-if="address.status == 1">Published</span>
+          </a>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>

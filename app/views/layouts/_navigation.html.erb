@@ -7,14 +7,19 @@
     </div>
     <div class="right">
       <% if current_user %>
+        <% if current_user.id == 1 %>
+          <%= link_to addresses_path, class: "#{ 'active' if current_page?(addresses_path) }" do %>
+            <i class="small ion-android-lock text-muted"></i> Manage Address
+          <% end %>
+        <% end %>
         
+        <%= link_to dashboard_index_path, class: "#{ 'active' if current_page?(dashboard_index_path) }" do %>
+          Dashboard
+        <% end %>
 
         <a href="" ng-click="toggleDropdown = !toggleDropdown">
-          <!-- <img src="http://www.johnson.cornell.edu/people/faculty/oh33/oh33_profile.jpg"> -->
           <span class="email"><%= current_user.email %></span> <i class="ion-arrow-down-b small email"></i>
-          
           <i class="ion-navicon"></i>
-          
         </a>
       <% else %>
         <%= link_to new_user_session_path, class: "#{ 'active' if current_page?(new_user_session_path) }" do %>
@@ -34,7 +39,7 @@
         <%= link_to "Edit My Account", edit_user_registration_path %>
       </li>
       <li>
-        <a href="mailto:orders@theminerco.com">Contact Us</a>
+        <a href="mailto:hello@simplyanaddress.com">Contact Us</a>
       </li>
       <li>
         <%= link_to "Logout", destroy_user_session_path %>

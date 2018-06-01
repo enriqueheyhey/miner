@@ -2,22 +2,36 @@
   <h1>How it Works</h1>
   <div class="one-third">
     <%= image_tag("Intro Screen 1.png") %>
-    <h3>Browse through addresses</h3>
-    <p>Find ones you want and start a subscription. Real addresses, no PO Boxes.</p>
+    <h3>Addresses You Want</h3>
+    <p>We carry real addresses, no PO Boxes.</p>
   </div>
   <div class="one-third">
     <%= image_tag("Intro Screen 2.png") %>
-    <h3>Pay how you'd like</h3>
-    <p>Pay virtually upfront for a discounted price or go month to month for maximum flexibility.</p>
+    <h3>Yearly Subscriptions</h3>
+    <p>Rent them for one year or get a special discounted pricing for longer term rentals.</p>
   </div>
   <div class="one-third">
     <%= image_tag("Intro Screen 4.png") %>
     <h3>Make it work for you</h3>
-    <p>Go Ahead! Put it on your website, business cards or marketing material. Open new markets by creating that 'local' feel.</p>
+    <p>For your website, business cards or marketing material. Open new markets by creating that 'local' feel.</p>
   </div>
   <div class="clearfix"></div>
 </div>
 
-<div class="second-panel">
-  <h3>Testimonials</h3>
+<div class="third-panel">
+  <div class="container">
+    <h1 class="center">Select Addresses</h1>
+    <div class="header">
+      <div class="left">
+        <input class="form-control search" placeholder="Search Addresses ..." ng-model="searchQuery">
+      </div>
+      <div class="right text-right">
+        <%= link_to new_address_path, class: "btn btn-primary" do %>
+          Go To Cart <small>({{cart.length}})</small>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <%= render 'addresses/table' %>
+  </div>
 </div>

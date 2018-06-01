@@ -150,6 +150,30 @@ label {
   }
 }
 
+.nav-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+
+  &.nav-scroll-pills {
+    text-align: center;
+  }
+
+  ul {
+    padding: 2px 0;
+
+    li {
+      display: inline-block;
+      width: auto;
+      padding: 5px 20px 5px 0;
+      white-space: normal;
+      vertical-align: top;
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .pages .second-panel .one-third {
     width: 100%;

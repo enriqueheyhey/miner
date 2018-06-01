@@ -23,24 +23,55 @@ var myApp = angular.module('myApp', [
   'appControllers', 'chart.js'
 ]);
 
+
+
 var appControllers = angular.module('appControllers', ['ngAnimate']);
 
-appControllers.controller('MainController', ['$rootScope', '$scope', '$timeout', '$http', function($rootScope, $scope, $timeout, $http) {
+appControllers.controller('MainController', ['$rootScope', '$scope', '$location', '$timeout', '$http', '$location', '$anchorScroll', function($rootScope, $scope, $location, $timeout, $http, $location, $anchorScroll) {
   
-  $rootScope.purchasedMiner = function() {
-    $timeout(function() {
-      $rootScope.toggleConfirmation = true;
-    }, 5000);
-  };
 
-  $http.get('https://api.coinmarketcap.com/v1/ticker/')
-    .success(function(data) {
-      $scope.coinValues = data;
-  });
+  $scope.scrollTo = function(id) {
+    $anchorScroll(id);
+  }
+
+  $scope.clearCart = function() {
+    localStorage.clear();
+  }
+
+  $scope.getCart = function() {
+    if (localStorage.getItem('cart') == null) {
+      $scope.cart = [];
+    } else {
+      $scope.cart = JSON.parse(localStorage.getItem('cart'));
+    }
+  }
+
+  $scope.addItem = function(id) {
+    $scope.getCart();
+    $scope.cart.push(id);
+    localStorage.setItem('cart', JSON.stringify($scope.cart));
+  }
+
+  $scope.removeItem = function(id) {
+    $scope.getCart();
+    var index = $scope.cart.indexOf(id);
+    $scope.cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify($scope.cart));
+  }
+
+  $scope.itemInCart = function(id) {
+    $scope.getCart();
+
+    for (var i = $scope.cart.length - 1; i >= 0; i--) {
+      if ($scope.cart[i] == id) {
+        return true;
+      }
+    };
+  }
 
 }]);
 
-appControllers.controller('LineCtrl', ['$scope', function($scope) {
+/*appControllers.controller('LineCtrl', ['$scope', function($scope) {
   
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
     $scope.series = ['Series A', 'Series B'];
@@ -70,4 +101,4 @@ appControllers.controller('LineCtrl', ['$scope', function($scope) {
         ]
       }
     };
-  }]);
+  }]);*/

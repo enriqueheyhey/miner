@@ -4,7 +4,8 @@
       <h1>Just an address. No Frills.</h1>
       <h2>Establish a physical presence, virtually, for multiple locations, all at once.</h2>
       <% if controller_name == 'pages' %>
-        <%= link_to "Rent an address", new_user_registration_path, class: "btn" %>
+        <a ng-click="scrollTo('addressContent')" class="btn">See Addresses</a>
+        <%#= link_to "Rent an address", new_user_registration_path, class: "btn" %>
       <% end %>
       <!-- <div class="container">
         <img class="sixtyday" src="<%#= image_url("60day-guarantee.png") %>">

@@ -1,10 +1,11 @@
 class AddressesController < ApplicationController
+  before_filter :restrict_user_by_id
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    @addresses = Address.all.order('display_state ASC')
   end
 
   # GET /addresses/1
@@ -43,7 +44,7 @@ class AddressesController < ApplicationController
     respond_to do |format|
       if @address.update(address_params)
         format.html { redirect_to @address, notice: 'Address was successfully updated.' }
-        format.json { render :show, status: :ok, location: @address }
+        format.json { render :index, status: :ok, location: @address }
       else
         format.html { render :edit }
         format.json { render json: @address.errors, status: :unprocessable_entity }
@@ -69,6 +70,19 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.fetch(:address, {})
+       params.require(:address).permit(:display_city, :display_state, :street, :street_2, :city, :state, :zip, :country, :status, :neighborhood, :photo_url, :description) 
     end
+
+  protected
+
+  # redirect if user not logged in or does not have a valid role
+  def restrict_user_by_id
+    if current_user
+      unless current_user.id == 1 || current_user.id == 2
+        redirect_to root_path
+      end
+    else
+      redirect_to root_path
+    end
+  end
 end

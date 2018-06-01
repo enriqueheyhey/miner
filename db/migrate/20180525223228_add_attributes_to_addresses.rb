@@ -8,5 +8,8 @@ class AddAttributesToAddresses < ActiveRecord::Migration[5.0]
     add_column :addresses, :country, :string
     add_column :addresses, :photo_url, :text
     add_column :addresses, :description, :text
+    add_column :addresses, :display_city, :text
+    add_column :addresses, :display_state, :text
+    add_column :addresses, :street_2, :string
   end
 end
