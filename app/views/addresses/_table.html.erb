@@ -1,6 +1,6 @@
 <div ng-init="angularAddresses = <%= @addresses.to_json %>; getCart();"></div>
-<div id="addressContent">
-  <table>
+<div>
+  <table class="table-address">
     <tr>
       <% if controller_name == 'pages' %>
         <th class="center">
@@ -23,10 +23,10 @@
         <td class="center">
           <i class="link ion-android-checkbox text-success"
           ng-if="itemInCart(address.id)"
-          ng-click="removeItem(address.id)"></i>
+          ng-click="removeItem(address.id, address)"></i>
           <i class="link ion-android-checkbox-outline-blank text-muted"
           ng-if="!itemInCart(address.id)"
-          ng-click="addItem(address.id)"></i>
+          ng-click="addItem(address.id, address)"></i>
         </td>
       <% end %>
       <% if controller_name != 'pages' %>

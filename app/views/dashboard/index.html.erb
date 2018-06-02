@@ -1,2 +1,20 @@
+<div class="panel" ng-init="getCart()">
+  <div class="left">
+    <h1>Shopping Cart</h1>
+  </div>
+  <div class="right text-right">
+    <a href="" class="btn btn-danger" ng-click="clearCart()">Empty Cart</a>
+  </div>
+  <div class="clearfix"></div>
+  
+  <ul class="list-group">
+    <li ng-repeat="address in fullcart">
+      {{address.street}} {{address.street_2}} {{address.city}}, {{address.state}}
+      <small class="text-danger link"><i class="ion-trash-b" ng-click="removeItem(address.id, address)"></i></small>
+    </li>
+  </ul>
 
+  <%= render 'transactions/form' %>
+  <br>
+</div>
 <%= render 'layouts/footer' %>

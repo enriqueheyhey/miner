@@ -1,0 +1,50 @@
+<div ng-init="getCart()"></div>
+
+<div class="panel" ng-if="cart.length > 0">
+  <div class="left">
+    <h1>Shopping Cart</h1>
+  </div>
+  <div class="right text-right">
+    <a href="" class="btn btn-danger" ng-click="clearCart()">Empty Cart</a>
+  </div>
+  <div class="clearfix"></div>
+  
+  <ul class="list-group">
+    <li ng-repeat="address in fullcart">
+      {{address.street}} {{address.street_2}} {{address.city}}, {{address.state}}
+      <small class="text-danger link"><i class="ion-trash-b" ng-click="removeItem(address.id, address)"></i></small>
+    </li>
+  </ul>
+
+  <%= render 'form' %>
+</div>
+
+<%= render 'layouts/footer' %>
+
+
+<!-- <p id="notice"><%#= notice %></p>
+
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%# @transactions.each do |transaction| %>
+      <tr>
+        <td><%#= link_to 'Show', transaction %></td>
+        <td><%#= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%#= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Transaction', new_transaction_path %>
+ -->

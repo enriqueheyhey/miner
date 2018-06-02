@@ -20,7 +20,7 @@
 
 
 var myApp = angular.module('myApp', [
-  'appControllers', 'chart.js'
+  'appControllers'
 ]);
 
 
@@ -41,22 +41,32 @@ appControllers.controller('MainController', ['$rootScope', '$scope', '$location'
   $scope.getCart = function() {
     if (localStorage.getItem('cart') == null) {
       $scope.cart = [];
+      $scope.fullcart = [];
+      $scope.cartToString = $scope.cart.join();
     } else {
       $scope.cart = JSON.parse(localStorage.getItem('cart'));
+      $scope.fullcart = JSON.parse(localStorage.getItem('fullcart'));
+      $scope.cartToString = $scope.cart.join();
     }
   }
 
-  $scope.addItem = function(id) {
+  $scope.addItem = function(id, item) {
     $scope.getCart();
     $scope.cart.push(id);
+    $scope.fullcart.push(item);
+    $scope.cartToString = $scope.cart.join();
     localStorage.setItem('cart', JSON.stringify($scope.cart));
+    localStorage.setItem('fullcart', JSON.stringify($scope.fullcart));
   }
 
-  $scope.removeItem = function(id) {
+  $scope.removeItem = function(id, item) {
     $scope.getCart();
     var index = $scope.cart.indexOf(id);
     $scope.cart.splice(index, 1);
+    $scope.fullcart.splice(index, 1);
+    $scope.cartToString = $scope.cart.join();
     localStorage.setItem('cart', JSON.stringify($scope.cart));
+    localStorage.setItem('fullcart', JSON.stringify($scope.fullcart));
   }
 
   $scope.itemInCart = function(id) {

@@ -18,16 +18,16 @@
   <div class="clearfix"></div>
 </div>
 
-<div class="third-panel">
+<div class="third-panel" id="addressContent">
   <div class="container">
-    <h1 class="center">Select Addresses</h1>
+    <h1 class="center">Shop Addresses</h1>
     <div class="header">
       <div class="left">
         <input class="form-control search" placeholder="Search Addresses ..." ng-model="searchQuery">
       </div>
       <div class="right text-right">
-        <%= link_to new_address_path, class: "btn btn-primary" do %>
-          Go To Cart <small>({{cart.length}})</small>
+        <%= link_to new_user_registration_path, class: "btn btn-primary" do %>
+          <i class="ion-android-cart"></i> Cart <small class="faded">({{cart.length}})</small>
         <% end %>
       </div>
       <div class="clearfix"></div>

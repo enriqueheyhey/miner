@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :transactions
   resources :addresses
   resources :dashboard
   resources :pages
   devise_for :users
 
   authenticated do
-    root 'dashboard#index', as: :authenticated
+    root 'transactions#index', as: :authenticated
   end
 
   devise_scope :user do

@@ -1,5 +1,32 @@
+<div ng-init="angularAddresses = <%= @addresses.to_json %>; getCart();"></div>
+<div class="subnav">
+  <a href="/">
+    <i class="ion-chevron-left"></i> Back
+  </a>
+</div>
 <div class="panel">
-  <h1>Sign Up</h1>
+  <h1 ng-if="!cart">Sign Up</h1>
+
+  <div ng-if="cart">
+    <div class="left">
+      <h1 ng-if="cart">Shopping Cart</h1>
+    </div>
+    <div class="right text-right">
+      <a href="" class="btn btn-danger" ng-click="clearCart()">Empty Cart</a>
+    </div>
+    <div class="clearfix"></div>
+    
+    <ul class="list-group">
+      <li ng-repeat="address in fullcart">
+        <!-- <i class="ion-checkmark-circled text-success"></i> -->
+        {{address.street}} {{address.street_2}} {{address.city}}, {{address.state}}
+        <small class="text-danger link"><i class="ion-trash-b" ng-click="removeItem(address.id, address)"></i></small>
+      </li>
+    </ul>
+    <br>
+
+    <!-- <h3>Set up your account</h3> -->
+  </div>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -23,7 +50,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Create Account", class: "btn" %>
+      <%= f.submit "Next", class: "btn" %>
     </div>
   <% end %>
 
