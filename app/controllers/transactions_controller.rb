@@ -5,8 +5,15 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
+    @addresses = Address.all.order('display_state ASC')
     @transactions = Transaction.all
     @transaction = Transaction.new
+    @transactions_for_current_user = Transaction.where(:user_id == current_user.id)
+    puts 'hi'
+    puts @transactions_for_current_user.pluck(:address_array)
+    puts 'hp'
+    @addresses_for_current_user = @transactions_for_current_user.pluck(:address_array)
+    @addresses_for_current_user_flattened = @addresses_for_current_user.to_s.gsub('"', '')
   end
 
   # GET /transactions/1
@@ -30,7 +37,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to index, notice: 'Transaction was successfully created.' }
+        format.html { redirect_to transactions_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new }

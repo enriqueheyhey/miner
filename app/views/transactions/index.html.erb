@@ -19,6 +19,21 @@
   <%= render 'form' %>
 </div>
 
+<div>
+Transactions:
+<%= @transactions_for_current_user.to_json %>
+<hr>
+<%= @addresses_for_current_user.to_json %>
+<hr>
+New Array:
+<%= @addresses_for_current_user_flattened.to_json %>
+</div>
+<div>
+  {{transactionData}}
+</div>
+
+<%= render 'table' %>
+
 <%= render 'layouts/footer' %>
 
 
