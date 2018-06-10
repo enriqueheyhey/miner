@@ -1,0 +1,39 @@
+<div>
+  <table class="table-address">
+    <tr>
+      <th class="center"></th>
+      <th>State</th>
+      <th>City</th>
+      <th>Street</th>
+      <% if current_user.id == 3 || current_user.id == 4 %>
+        <th>Status</th>
+      <% end %>
+    </tr>
+    <tr ng-repeat="address in angularAddresses | filter: searchQuery track by $index" ng-hide="addressOwned(address.id)">
+      <td class="center">
+        <i class="link ion-android-checkbox text-success"
+        ng-if="itemInCart(address.id)"
+        ng-click="removeItem(address.id, address)"></i>
+        <i class="link ion-android-checkbox-outline-blank text-muted"
+        ng-if="!itemInCart(address.id)"
+        ng-click="addItem(address.id, address)"></i>
+      </td>
+      <td>
+        {{address.city}}
+      </td>
+      
+      <td>
+        {{address.street}}<span ng-if="address.street_2">, {{address.street_2}}</span>
+      </td>
+      <td>
+        {{address.state}}
+      </td>
+      <% if current_user.id == 3 || current_user.id == 4 %>
+        <td>
+          <span ng-if="address.status == 0">Draft</span>
+          <span ng-if="address.status == 1">Published</span>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>

@@ -104,6 +104,21 @@
   a {
     font-weight: 800;
   }
+
+  .btn-group {
+    text-align: center;
+
+    .btn-tab {
+      font-size: 125%;
+      padding: 0.5em;
+      color: #888;
+
+      &.active {
+        color: #000;
+        border-bottom: 5px solid #007bff;
+      }
+    }
+  }
 }
 
 .footer {

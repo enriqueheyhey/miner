@@ -1,39 +1,48 @@
-<div ng-init="getCart()"></div>
+<div ng-init="getCart(); angularAddresses = <%= @addresses.to_json %>; transactionData = <%= @addresses_for_current_user_flattened.to_json %>;"></div>
 
-<div class="panel" ng-if="cart.length > 0">
-  <div class="left">
-    <h1>Shopping Cart</h1>
+<div class="subnav" ng-init="activeTab = 'my'">
+  <div class="btn-group">
+    <a href=""
+    class="btn-tab"
+    ng-class="{'active': activeTab == 'my'}"
+    ng-click="activeTab = 'my'">
+      My Addresses
+    </a>
+    <a href=""
+    class="btn-tab"
+    ng-class="{'active': activeTab == 'new'}"
+    ng-click="activeTab = 'new'">
+      Purchase New Address
+    </a>
+    
   </div>
-  <div class="right text-right">
-    <a href="" class="btn btn-danger" ng-click="clearCart()">Empty Cart</a>
+</div>
+
+
+
+<div class="container">
+  <div ng-show="activeTab == 'new'">
+    <div class="panel" ng-if="cart.length > 0">
+      <div class="left">
+        <h1>Shopping Cart</h1>
+      </div>
+      <div class="right text-right">
+        <a href="" class="btn btn-danger" ng-click="clearCart()">Empty Cart</a>
+      </div>
+      <div class="clearfix"></div>
+      
+      <ul class="list-group">
+        <li ng-repeat="address in fullcart track by $index">
+          {{address.street}} {{address.street_2}} {{address.city}}, {{address.state}}
+          <small class="text-danger link"><i class="ion-trash-b" ng-click="removeItem(address.id, address)"></i></small>
+        </li>
+      </ul>
+
+      <%= render 'form' %>
+    </div>
   </div>
-  <div class="clearfix"></div>
-  
-  <ul class="list-group">
-    <li ng-repeat="address in fullcart">
-      {{address.street}} {{address.street_2}} {{address.city}}, {{address.state}}
-      <small class="text-danger link"><i class="ion-trash-b" ng-click="removeItem(address.id, address)"></i></small>
-    </li>
-  </ul>
-
-  <%= render 'form' %>
+  <%= render 'purchased_address_table' %>
 </div>
-
-<div>
-Transactions:
-<%= @transactions_for_current_user.to_json %>
-<hr>
-<%= @addresses_for_current_user.to_json %>
-<hr>
-New Array:
-<%= @addresses_for_current_user_flattened.to_json %>
-</div>
-<div>
-  {{transactionData}}
-</div>
-
-<%= render 'table' %>
-
 <%= render 'layouts/footer' %>
 
 

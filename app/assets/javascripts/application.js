@@ -29,6 +29,14 @@ var appControllers = angular.module('appControllers', ['ngAnimate']);
 
 appControllers.controller('MainController', ['$rootScope', '$scope', '$location', '$timeout', '$http', '$location', '$anchorScroll', function($rootScope, $scope, $location, $timeout, $http, $location, $anchorScroll) {
   
+  $scope.addressOwned = function(id) {
+    console.log('a',$scope.transactionData);
+    for (var i = $scope.angularAddresses.length - 1; i >= 0; i--) {
+      if ($scope.transactionData.includes(id)) {
+        return true;
+      }
+    };
+  }
 
   $scope.scrollTo = function(id) {
     $anchorScroll(id);
@@ -36,6 +44,8 @@ appControllers.controller('MainController', ['$rootScope', '$scope', '$location'
 
   $scope.clearCart = function() {
     localStorage.clear();
+    $scope.cart = [];
+    $scope.fullcart =[];
   }
 
   $scope.getCart = function() {
@@ -70,7 +80,7 @@ appControllers.controller('MainController', ['$rootScope', '$scope', '$location'
   }
 
   $scope.itemInCart = function(id) {
-    $scope.getCart();
+   
 
     for (var i = $scope.cart.length - 1; i >= 0; i--) {
       if ($scope.cart[i] == id) {

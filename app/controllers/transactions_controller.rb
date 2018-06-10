@@ -9,11 +9,24 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.all
     @transaction = Transaction.new
     @transactions_for_current_user = Transaction.where(:user_id == current_user.id)
-    puts 'hi'
-    puts @transactions_for_current_user.pluck(:address_array)
-    puts 'hp'
+    #puts 'hi'
+    #puts @transactions_for_current_user.pluck(:address_array)
+    #puts 'hp'
     @addresses_for_current_user = @transactions_for_current_user.pluck(:address_array)
     @addresses_for_current_user_flattened = @addresses_for_current_user.to_s.gsub('"', '')
+
+    @addresses_without_current_user_address = []
+    @available_addresses = []    
+
+    @addresses.each do |a|
+      if @addresses_for_current_user_flattened.include? a.id.to_s
+        @addresses_without_current_user_address.push(a)
+      end
+
+      if !@addresses_for_current_user_flattened.include? a.id.to_s
+        @available_addresses.push(a)
+      end
+    end
   end
 
   # GET /transactions/1

@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create! :email => 'enriqueflorendo@yahoo.com', :password => 'password123', :password_confirmation => 'password123'
 
-
 address_list = [
   ["Birmingham","Alabama","1430 Gadsden Hwy","Ste 116","Birmingham","AL","35235", "USA", "1"  ],
   ["Little Rock","Arkansas","6834 Cantrell Road","","Little Rock","AR","72207", "USA", "1"  ],

@@ -1,0 +1,56 @@
+<div ng-init="myAddresses = <%= @addresses_without_current_user_address.to_json %>; transactionData = <%= @addresses_for_current_user_flattened.to_json %>; availableAddresses = <%= @available_addresses.to_json %>">
+  <table class="table-address">
+    <tr>
+      <th ng-show="activeTab == 'new'"></th>
+      <th>State</th>
+      <th>City</th>
+      <th>Street</th>
+      <th ng-if="activeTab == 'my'">Date of Request</th>
+      <th ng-if="activeTab == 'my'">Status</th>
+    </tr>
+    <tbody ng-if="activeTab == 'my'">
+      <tr ng-repeat="address in myAddresses | filter: searchQuery track by $index">
+        <td>
+          {{address.display_state}}
+        </td>
+        <td>
+          {{address.city}}
+        </td>
+        
+        <td>
+          {{address.street}}<span ng-if="address.street_2">, {{address.street_2}}</span>
+        </td>
+        <td>
+          {{address.created_at | date}}
+        </td>
+        <td ng-if="activeTab == 'my'">
+          Waiting for Approval
+        </td>
+        
+      </tr>
+    </tbody>
+
+    <tbody ng-if="activeTab == 'new'">
+      <tr ng-repeat="availableAddress in availableAddresses | filter: searchQuery track by $index">
+        <td class="center">
+          <i class="link ion-android-checkbox text-success"
+          ng-if="itemInCart(availableAddress.id)"
+          ng-click="removeItem(availableAddress.id, availableAddress)"></i>
+          <i class="link ion-android-checkbox-outline-blank text-muted"
+          ng-if="!itemInCart(availableAddress.id)"
+          ng-click="addItem(availableAddress.id, availableAddress)"></i>
+        </td>
+        <td>
+          {{availableAddress.display_state}}
+        </td>
+        <td>
+          {{availableAddress.city}}
+        </td>
+        
+        <td>
+          {{availableAddress.street}}<span ng-if="address.street_2">, {{availableAddress.street_2}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
