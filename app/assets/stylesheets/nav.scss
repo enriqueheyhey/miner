@@ -122,9 +122,18 @@
 }
 
 .footer {
-  background-color: #eee;
+  background-color: rgba(253,184,38,.25);
+  border-top: 1px solid rgba(253,184,38,.5);
   padding: 20px;
-  border-top: 1px solid #ccc;
+
+  .left {
+    img {
+      height: 25px;
+      width: auto;
+      margin-top: -5px;
+    }
+  }
+
 
   .right {
     text-align: right;
