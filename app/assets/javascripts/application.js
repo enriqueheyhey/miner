@@ -48,6 +48,13 @@ appControllers.controller('MainController', ['$rootScope', '$scope', '$location'
     $scope.fullcart =[];
   }
 
+  $scope.submitRailsForm = function() {
+    document.getElementById('new_transaction').submit();
+    localStorage.clear();
+    $scope.cart = [];
+    $scope.fullcart =[];
+  }
+
   $scope.getCart = function() {
     if (localStorage.getItem('cart') == null) {
       $scope.cart = [];
