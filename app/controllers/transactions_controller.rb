@@ -8,7 +8,7 @@ class TransactionsController < ApplicationController
     @addresses = Address.all.order('display_state ASC')
     @transactions = Transaction.all
     @transaction = Transaction.new
-    @transactions_for_current_user = Transaction.where(:user_id == current_user.id)
+    @transactions_for_current_user = Transaction.where(user_id: current_user.id)
     #puts 'hi'
     #puts @transactions_for_current_user.pluck(:address_array)
     #puts 'hp'
