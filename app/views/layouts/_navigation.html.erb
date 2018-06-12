@@ -13,7 +13,7 @@
           <% end %>
         <% end %>
         
-        <%= link_to transactions_path, class: "#{ 'active' if current_page?(transactions_path) }" do %>
+        <%= link_to transactions_path, class: "#{ 'active' if current_page?(transactions_path) } hidden-xs-down" do %>
           Dashboard
         <% end %>
 

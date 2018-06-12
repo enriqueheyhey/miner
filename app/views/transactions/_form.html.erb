@@ -14,4 +14,7 @@
   <%= f.text_field :address_array, class: "form-control", value: '{{cartToString}}', type: "hidden" %>
   <br>
   <%= f.submit 'Confirm Purchase', class: "btn btn-primary", "ng-click" => "submitRailsForm()" %>
+  <div class="clearfix"></div>
+  <br>
+  <p class="small" style="margin-bottom: 0;">I hereby authorize that any mail received at any of our location(s) addressed to you will be discarded and/or shedded. I understand that the service provided is not a "digital mailbox" or "virtual mailbox" and simply an address.</p>
 <% end %>

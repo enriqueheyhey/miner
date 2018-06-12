@@ -1,8 +1,9 @@
 <div ng-init="myAddresses = <%= @addresses_without_current_user_address.to_json %>; transactionData = <%= @addresses_for_current_user_flattened.to_json %>; availableAddresses = <%= @available_addresses.to_json %>">
-  <table class="table-address">
+  
+  <table class="table-address" ng-hide="activeTab == 'faqs'">
     <tr>
       <th ng-show="activeTab == 'new'"></th>
-      <th>State</th>
+      <th class="hidden-xs-down">State</th>
       <th>City</th>
       <th>Street</th>
       <th ng-if="activeTab == 'my'">Date of Request</th>
@@ -10,11 +11,12 @@
     </tr>
     <tbody ng-if="activeTab == 'my'">
       <tr ng-repeat="address in myAddresses | filter: searchQuery track by $index">
-        <td>
+        <td class="hidden-xs-down">
           {{address.display_state}}
         </td>
         <td>
           {{address.city}}
+          <span class="hidden-sm-up">{{address.state}}</span>
         </td>
         
         <td>
@@ -40,11 +42,14 @@
           ng-if="!itemInCart(availableAddress.id)"
           ng-click="addItem(availableAddress.id, availableAddress)"></i>
         </td>
-        <td>
+        <td class="hidden-xs-down">
           {{availableAddress.display_state}}
         </td>
         <td>
           {{availableAddress.city}}
+          <span class="hidden-xs-down">
+            {{availableAddress.state}}
+          </span>
         </td>
         
         <td>
@@ -53,4 +58,8 @@
       </tr>
     </tbody>
   </table>
+
+  <div ng-show="activeTab == 'faqs'">
+    <%= render 'layouts/faq' %>
+  </div>
 </div>

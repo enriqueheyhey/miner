@@ -5,12 +5,40 @@
   }
   
   .pages {
-    .btn {
-      width: 300px !important;
+
+    h1 {
+      font-size: 2.5em !important;
     }
 
     .firstpanel {
-      padding: 60px 20px !important;
+      padding: 0 !important;
+      height: 400px;
+
+      .btn {
+        width: 300px !important;
+        margin: auto;
+      }
+
+      .gradient-overlay {
+        padding: 3em 10px !important;
+        height: 400px;
+      }
+    }
+
+    .third-panel {
+      padding: 60px 0 !important;
+
+      .header {
+        width: 90%;
+        margin: auto;
+      }
+
+      .left {
+        width: 70%;
+      }
+      .right {
+        width: 30%;
+      }
     }
   }
   

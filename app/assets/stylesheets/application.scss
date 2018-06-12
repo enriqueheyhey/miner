@@ -369,3 +369,19 @@ th {
     border: 1px solid rgba(0,0,0,.125);
   }
 }
+
+.hidden-sm-up {
+  display: none; 
+}
+
+@media screen and (max-width: 767px) {
+  .hidden-xs-down {
+    display: none;
+  }
+  .hidden-sm-up {
+    display: inherit; 
+  }
+  .container {
+    padding: 0;
+  }
+}

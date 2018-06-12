@@ -70,6 +70,7 @@
     width: 300px;
     border: 3px solid rgba(0,0,0,.15);
     border-top: 2px solid rgba(0,0,0,.15);
+    z-index: 99;
 
     ul {
       list-style: none;
@@ -110,7 +111,7 @@
 
     .btn-tab {
       font-size: 125%;
-      padding: 0.5em;
+      padding: 0.5em 1em;
       color: #888;
 
       &.active {
@@ -170,6 +171,29 @@
 }
 
 @media screen and (max-width: 767px) {
+  .subnav {
+    background-color: rgba(0,0,0,.1);
+    padding: 15px;
+
+    a {
+      font-weight: 800;
+    }
+
+    .btn-group {
+      text-align: center;
+
+      .btn-tab {
+        font-size: 100%;
+        padding: 0.5em;
+        color: #888;
+
+        &.active {
+          color: #000;
+          border-bottom: 5px solid #007bff;
+        }
+      }
+    }
+  }
   .email {
     display: none;
   }
@@ -185,14 +209,7 @@
   }
 
   .footer {
-    padding: 15px 20px 20px;
-
-    i {
-      font-size: 3em;
-      line-height: 0;
-      padding: 10px 20px;
-      display: inherit;
-    }
+    padding: 10px;
 
     .left {
       display: none;
@@ -203,12 +220,23 @@
       text-align: center;
     }
 
-    .moneyback {
-      vertical-align: 12px;
-    }
-
     .sixtyday-text {
       display: none;
+    }
+  }
+
+  .navdropdown {
+    right: 0 !important;
+  }
+
+  .navbar {
+    min-height: 50px;
+    .navbody {
+      padding: 0 10px;
+    }
+    img {
+      height: 30px;
+      margin-top: 10px;
     }
   }
 }
